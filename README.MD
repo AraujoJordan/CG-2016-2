@@ -1,5 +1,5 @@
 # Blog de Computação Gráfica
-Mantido e atualizado por Jordan Lira para a discuplina de Computação Gráfica 2016.2 da UFPB
+Mantido e atualizado por Jordan Lira para a disciplina de Computação Gráfica 2016.2 da UFPB
 
 
 Sumário
