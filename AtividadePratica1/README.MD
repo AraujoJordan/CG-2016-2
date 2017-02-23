@@ -12,6 +12,7 @@ Neste trabalho, vou abordar alguns algoritmos de rasterização, focando em 3 pr
     * Desenho de um triangulo (sem preenchimento) com cores da linha variando
 
 ## PutPixel
+
 Para a inserção de um pixel na tela, é necessário calcular sua posição exata em bytes. Como cada pixel possui 4 bytes (1 byte para vermelho, 1 para verde, 1 para azul e 1 para a transparência), e o display é organizado como um array de bytes, temos que realizar o seguinte algoritmo para encontrar a posição desejada:
 ```C
 int offset = (x  + y * IMAGE_WIDTH) * 4;
@@ -25,3 +26,36 @@ Se por exemplo, precisar pintar de branco o pixel na posição (25,10) em uma te
 ![PutPixel](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/draw%20Pixel.jpg)
 ![PutPixel2](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/draw%20Pixel2.jpg)
 
+### Classe Pixel
+Para facilitar o desenvolvimento do trabalho, foi-se criado uma classe Pixel, para representar a posição e cores dos pixels, facilitando também, a depuração, caso o pixel possua posição ou cor inválida.
+
+## DrawLine
+
+## DrawTriangle
+No drawTriangle é preciso desenhar o contorno de um triângulo dado 3 pontos como entrada. As linhas do triangulo precisam alternar de cor, formando um degradê com as 3 cores informadas no Pixel.
+Como no drawLine já permite a varianção de cor, o método drawTriangle receberá as 3 cores nos próprios Pixels e rederizará os contornos do triângulo com o drawLine.
+
+## Extra
+### DrawCircle
+Como extra, foi feito uma função de renderizar círculos.
+A função drawCircle desenha um círculo, com o centro em um determinado pixel, com o raio dado em um número inteiro e com a cor do contorno definido na cor do pixel.
+Para representar o círculo, é preciso converter seu valor de coordenadas polares para o plano cartesiano utilizando as seguintes instruções:
+```C
+int x = radius * cos(teta);
+int y = radius * sin(teta);
+```
+Onde a variável teta representa o ângulo, em coordenadas polares. Variando o teta de 0 a 2*PI dentro de um loop, teremos o desenho completo do círculo.
+Foi encontrado um problema nesta etapa em relação a variação teta, se a variação de teta para cada interação do loop for muito grande, o círculo fica com pixels muito espaçado, já se a variação de teta for muito pequena, o círculo fica ineficiente de se renderizar, já que foi gasto uma interação extra para a mesma posição do contorno do pixel. Este problema é conhecido na Matemática como o [Problema do Círculo de Gauss](https://en.wikipedia.org/wiki/Gauss_circle_problem).
+Uma solução simples para este problema é utilizando uma generalização do método encontado por Gauss, representado por um somatório dos quadrados do raio do círculo:
+![Solução para o Problema do Círculo de Gauss](https://wikimedia.org/api/rest_v1/media/math/render/svg/bda59a323e2f697120fbd0785b8dc75ce9ccbe5c)
+Que pode ser fácilmentne representado no seguinte loop:
+```C
+int circlePixels = 0;
+for(int n = 0; n <= radius; n++)
+  circlePixels += sqrt( (radius*radius) - (n*n) );
+circlePixels = circlePixels * 4 + 1;
+```
+A variação de teta então ficou:
+```C
+float variation = 2*PI / ((float) circlePixels);
+```
