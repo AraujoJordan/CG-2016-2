@@ -28,24 +28,33 @@ Se por exemplo, precisar pintar de branco o pixel na posição (25,10) em uma te
 
 ### Classe Pixel
 Para facilitar o desenvolvimento do trabalho, foi-se criado uma classe Pixel, para representar a posição e cores dos pixels, facilitando também, a depuração, caso o pixel possua posição ou cor inválida.
+O cabeçalho do construtor do Pixel ficou da seguitne maneira:
+```C
+Pixel pixel = Pixel(int x, int y, int* colorArray);
+```
+E o cabeçalho do método putPixel, utilizando a classe Pixel então
+```C
+putPixel(Pixel px);
+```
 
 ## DrawLine
+No drawLine é pedido para rasterizar uma linha dado dois pontos quaisquer. Foi utilizado uma generalização do Algorítmo de Bresenham. 
 
 ## DrawTriangle
-No drawTriangle é preciso desenhar o contorno de um triângulo dado 3 pontos como entrada. As linhas do triangulo precisam alternar de cor, formando um degradê com as 3 cores informadas no Pixel.
-Como no drawLine já permite a varianção de cor, o método drawTriangle receberá as 3 cores nos próprios Pixels e rederizará os contornos do triângulo com o drawLine.
+No drawTriangle é preciso rasterizar o contorno de um triângulo dado 3 pontos como entrada. As linhas do triangulo precisam alternar de cor, formando um degradê com as 3 cores informadas no Pixel.
+Como o drawLine já permite a varianção de cor, o método drawTriangle receberá as 3 cores nos próprios Pixels e rederizará os contornos do triângulo com o drawLine.
 
 ## Extra
 ### DrawCircle
 Como extra, foi feito uma função de renderizar círculos.
-A função drawCircle desenha um círculo, com o centro em um determinado pixel, com o raio dado em um número inteiro e com a cor do contorno definido na cor do pixel.
+A função drawCircle rasteriza um círculo, com o centro em um determinado pixel, com o raio dado em um número inteiro e com a cor do contorno definido na cor do pixel.
 Para representar o círculo, é preciso converter seu valor de coordenadas polares para o plano cartesiano utilizando as seguintes instruções:
 ```C
 int x = radius * cos(teta);
 int y = radius * sin(teta);
 ```
 Onde a variável teta(Θ) representa o ângulo, em coordenadas polares. Variando o teta de 0 a 2*PI dentro de um loop, teremos o desenho completo do círculo.
-Foi encontrado um problema nesta etapa em relação a variação teta, se a variação de teta para cada interação do loop for muito grande, o círculo fica com pixels muito espaçado, já se a variação de teta for muito pequena, o círculo fica ineficiente de se renderizar, já que foi gasto uma interação extra para a mesma posição do contorno do pixel. Este problema é conhecido na Matemática como o [Problema do Círculo de Gauss](https://en.wikipedia.org/wiki/Gauss_circle_problem).
+Foi encontrado um problema nesta etapa em relação a variação teta, se a variação de teta para cada interação do loop for muito grande, o círculo fica com pixels muito espaçado, já se a variação de teta for muito pequena, o círculo fica ineficiente de se renderizar, já que foi gasto uma interação extra para a mesma posição do contorno do círculo. Este problema é conhecido na Matemática como o [Problema do Círculo de Gauss](https://en.wikipedia.org/wiki/Gauss_circle_problem).
 Uma solução simples para este problema é utilizando uma generalização do método encontado por Gauss, representado por um somatório dos quadrados do raio do círculo:
 >![Solução para o Problema do Círculo de Gauss](https://wikimedia.org/api/rest_v1/media/math/render/svg/bda59a323e2f697120fbd0785b8dc75ce9ccbe5c)
 
