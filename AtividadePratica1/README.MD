@@ -44,7 +44,7 @@ Para representar o círculo, é preciso converter seu valor de coordenadas polar
 int x = radius * cos(teta);
 int y = radius * sin(teta);
 ```
-Onde a variável teta representa o ângulo, em coordenadas polares. Variando o teta de 0 a 2*PI dentro de um loop, teremos o desenho completo do círculo.
+Onde a variável teta(Θ) representa o ângulo, em coordenadas polares. Variando o teta de 0 a 2*PI dentro de um loop, teremos o desenho completo do círculo.
 Foi encontrado um problema nesta etapa em relação a variação teta, se a variação de teta para cada interação do loop for muito grande, o círculo fica com pixels muito espaçado, já se a variação de teta for muito pequena, o círculo fica ineficiente de se renderizar, já que foi gasto uma interação extra para a mesma posição do contorno do pixel. Este problema é conhecido na Matemática como o [Problema do Círculo de Gauss](https://en.wikipedia.org/wiki/Gauss_circle_problem).
 Uma solução simples para este problema é utilizando uma generalização do método encontado por Gauss, representado por um somatório dos quadrados do raio do círculo:
 >![Solução para o Problema do Círculo de Gauss](https://wikimedia.org/api/rest_v1/media/math/render/svg/bda59a323e2f697120fbd0785b8dc75ce9ccbe5c)
