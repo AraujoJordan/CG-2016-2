@@ -4,6 +4,7 @@ Mantido e atualizado por Jordan Lira para a disciplina de Computação Gráfica 
 
 Sumário
 ---
+[Atividade Prática 1](https://github.com/AraujoJordan/CG-2016-2/tree/master/AtividadePratica1)
 
 ## Licença
 
