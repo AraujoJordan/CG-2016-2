@@ -38,10 +38,10 @@ void display(void)
 		glVertex3f(-1.0f,-1.0f, 0.0f);
 		glTexCoord2f(1.0f, 1.0f);
 		glVertex3f( 1.0f,-1.0f, 0.0f);
-		glTexCoord2f(1.0f, 0.0f);	
+		glTexCoord2f(1.0f, 0.0f);
 		glVertex3f( 1.0f, 1.0f, 0.0f);
 	glEnd();
-	
+
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glDisable(GL_TEXTURE_2D);
 
@@ -89,7 +89,7 @@ void InitDataStructures(void)
 {
 	// Aloca o framebuffer e inicializa suas posições com 0.
 	FBptr = new unsigned char[IMAGE_WIDTH * IMAGE_HEIGHT * 5];
-	
+
 	for (unsigned int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT ; i++)
 	{
 		FBptr[i*4]   = 0;
@@ -107,4 +107,3 @@ void InitDataStructures(void)
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
-

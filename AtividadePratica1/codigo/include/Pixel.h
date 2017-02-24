@@ -11,6 +11,7 @@ private:
 
 public:
     Pixel(int x, int y, int* RGBA);
+    Pixel(int x, int y);
     ~Pixel();
     void setPosition (int x, int y);
     void setColor (int* RGBA);
@@ -18,7 +19,8 @@ public:
     int* getColor() const;
     int getX() const;
     int getY() const;
-
+    void setY(int y);
+    void setX(int x);
 };
 
 #endif
