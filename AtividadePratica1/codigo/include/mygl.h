@@ -87,7 +87,6 @@ void drawLine(const Pixel& px1,const Pixel& px2) {
   			distortion += increaseDistortion;
   			*straightLine += 1;
   		}
-
       *distortedLine += 1;
 
   		linePosition.setX(x);

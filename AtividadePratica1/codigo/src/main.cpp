@@ -52,28 +52,36 @@ void MyGlDraw(void) {
 		// draw line
 		//*****************************************************************************
 
-		//  for(int i = 0; i<=IMAGE_WIDTH; i++) {
-		//  	drawLine(Pixel(0,0,rgbaGreen),Pixel(i,IMAGE_HEIGHT,rgbaRed));
-		//  	drawLine(Pixel(0,0,rgbaBlue),Pixel(IMAGE_WIDTH,i,rgbaRed));
-		//  }
 
 		Pixel px1 = Pixel(IMAGE_WIDTH/2,IMAGE_HEIGHT/2,rgbaGreen);
 		Pixel px2 = Pixel(0,IMAGE_WIDTH,rgbaRed);
 		Pixel px3 = Pixel(IMAGE_WIDTH,IMAGE_WIDTH/2,rgbaBlue);
 
-		// drawLine(Pixel(10,10,rgbaGreen),Pixel(104,101,rgbaRed));
-		// drawLine(px1,px2);
-
-		// drawLine(Pixel(104,101,rgbaRed),Pixel(100,50,rgbaBlue));
-		// drawLine(Pixel(100,50,rgbaBlue),Pixel(10,10,rgbaGreen));
+		//  drawLine(Pixel(10,35,rgbaGreen),Pixel(114,101,rgbaRed));
+		//  drawLine(px1,px2);
+		 //
+		//  drawLine(Pixel(104,149,rgbaRed),Pixel(100,50,rgbaBlue));
+		//  drawLine(Pixel(100,12,rgbaBlue),Pixel(500,10,rgbaGreen));
+		 //
+		//  drawLine(px3,px1);
+		//  drawLine(px1,px2);
 
 		//*****************************************************************************
 		// draw triangle
 		//*****************************************************************************
+		 //
+		//  drawTriangle(px1,px2,px3);
+		//  drawTriangle(Pixel((IMAGE_WIDTH/2),(IMAGE_HEIGHT/2)-35,rgbaGreen),
+		//  							Pixel((IMAGE_WIDTH/2)+25,(IMAGE_HEIGHT/2)+25,rgbaRed),
+		// 							Pixel((IMAGE_WIDTH/2)-25,(IMAGE_HEIGHT/2)+25,rgbaBlue));
 
-		 drawTriangle(px1,px2,px3);
+		//*****************************************************************************
+		// drawCircle
+		//*****************************************************************************
 
-		// drawCircle(px1,250);
+		drawCircle(Pixel((IMAGE_WIDTH/2),(IMAGE_HEIGHT/2)-35,rgbaGreen),220);
+		drawCircle(Pixel((IMAGE_WIDTH/2)+25,(IMAGE_HEIGHT/2)+25,rgbaRed),50);
+		drawCircle(Pixel((IMAGE_WIDTH/2)-25,(IMAGE_HEIGHT/2)+25,rgbaBlue),20);
 }
 
 //-----------------------------------------------------------------------------
