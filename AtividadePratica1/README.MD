@@ -38,11 +38,48 @@ putPixel(Pixel px);
 ```
 
 ## DrawLine
-No drawLine é pedido para rasterizar uma linha dado dois pontos quaisquer. Foi utilizado uma generalização do Algorítmo de Bresenham. 
+No drawLine é pedido para rasterizar uma linha dado dois pontos quaisquer. Foi utilizado uma generalização do Algorítmo de Bresenham.
+Baseado no material da disciplina, o código foi implementado a versão mais básica, servindo apenas para o primeiro octante do plano cartesiano. Logo foi necesário generalizar para os outros 7 octantes.
+A generalização foi feita utilizando as variaveis xVariation e yVariation, onde nelas se verificava se a linha cresce ou decresce para x e y. Dependendo do crescimento da reta, foi feito o calculo para determinar se os incrementos/decrementos iam para x ou y. Utilizando os ponteiros straightLine e distortedLine e de acordo com o xVariation e yVariation é feito a reflexão em torno dos eixos x e y para que o incremento seja no octante correto. 
+
+```C
+while(*distortedLine < limit) {
+  		if (distortion <= 0) {
+  			distortion += increaseStraight;
+  		}
+  		else {
+  			distortion += increaseDistortion;
+  			*straightLine += 1;
+  		}
+      *distortedLine += 1;
+
+  		linePosition.setX(x);
+  		linePosition.setY(y);
+
+  		if(xLimit != px2.getX())
+  		    linePosition.setX( px1.getX() - (linePosition.getX() - px1.getX()));
+  		if(yLimit != px2.getY())
+  		    linePosition.setY( px1.getY() - (linePosition.getY() - px1.getY()));
+          
+       //CALCULO DO GRADIENTE
+          
+      putPixel(Pixel(linePosition.getX(),linePosition.getY(),gradientColor));
+```
+
+### Coloração da linha
+A coloração da reta foi feita utilizando um algoritmo para calcular a porcentagem da linha dado o ponto atual, assim foi aplicado a cor de acordo com a porcentagem dada usando o seguinte modelo:
+```C
+for(int index=0 ; index<4 ; index++)
+  radientColor[index] = px1.getColor()[index] * distancePercent + px2.getColor()[index] * (1 - distancePercent);
+```
+
+![DrawLine](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/drawLine.png)
 
 ## DrawTriangle
 No drawTriangle é preciso rasterizar o contorno de um triângulo dado 3 pontos como entrada. As linhas do triangulo precisam alternar de cor, formando um degradê com as 3 cores informadas no Pixel.
 Como o drawLine já permite a varianção de cor, o método drawTriangle receberá as 3 cores nos próprios Pixels e rederizará os contornos do triângulo com o drawLine.
+
+![DrawTriangle](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/drawTriangle.png)
 
 ## Extra
 ### DrawCircle
@@ -69,3 +106,6 @@ A variação de teta então ficou:
 ```C
 float variation = 2*PI / ((float) circlePixels);
 ```
+Infelizmente, é possível observar que o desempenho de rodar 2 multiplicações, 1 subtração e uma raiz quadrada em um somatório não é um eficiente o suficiente (O(n)) para valer a pena a utilização deste algorítmo, logo para ter um desempenho mais eficiente (O(1)), foi feito apenas uma divisão 1f/radius para representar a variação de pixeis do círculo, que dá um valor satisfatório dado o tamanho do raio do círculo.
+
+![drawCircle](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/drawCircle.png)
