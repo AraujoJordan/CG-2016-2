@@ -21,7 +21,7 @@ int offset = (x  + y * IMAGE_WIDTH) * 4;
 Onde offset é a primeira posição desejada, IMAGE_WIDTH é a "largura" da tela e 4 sãos as 4 cores do pixel.
 Se por exemplo, precisar pintar de branco o pixel na posição (25,10) em uma tela de 512 pixels de largura, teremos (25+10*512)*4 = 71680, onde 71680 é a posição do array correspondente ao primeira cor RGBA do pixel.
 
-![SomePixels](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/somePixel.jpg)
+![SomePixels](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica1/imagens/somePixels.jpg)
 
 É possível realizar padrões diferentes manipulando o x, o y e o RGBA dos píxeis em loops, como mostra nas imagens abaixo:
 
