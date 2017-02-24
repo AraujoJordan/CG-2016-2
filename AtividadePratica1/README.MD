@@ -69,3 +69,4 @@ A variação de teta então ficou:
 ```C
 float variation = 2*PI / ((float) circlePixels);
 ```
+Infelizmente, é possível observar que o desempenho de rodar 2 multiplicações, 1 subtração e uma raiz quadrada em um somatório não é um eficiente o suficiente (O(n)) para valer a pena a utilização deste algorítmo, logo para ter um desempenho mais eficiente (O(1)), foi feito apenas uma divisão 1f/radius para representar a variação de pixeis do círculo, que dá um valor satisfatório dado o tamanho do raio do círculo.
