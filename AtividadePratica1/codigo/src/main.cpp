@@ -42,10 +42,14 @@ void MyGlDraw(void) {
 		rgbaBlue[3] = 255;
 
 		//make 4 points for visibility
-		// putPixel(Pixel(200,50,rgbaGreen));
-		// putPixel(Pixel(199,49,rgbaGreen));
-		// putPixel(Pixel(200,49,rgbaGreen));
-		// putPixel(Pixel(199,50,rgbaGreen));
+		putPixel(Pixel(200,50,rgbaGreen));
+		putPixel(Pixel(199,49,rgbaGreen));
+		putPixel(Pixel(200,49,rgbaGreen));
+		putPixel(Pixel(199,50,rgbaGreen));
+
+		putPixel(Pixel((IMAGE_WIDTH/2),(IMAGE_HEIGHT/2)-35,rgbaGreen));
+		putPixel(Pixel((IMAGE_WIDTH/2)+25,(IMAGE_HEIGHT/2)+25,rgbaRed));
+		putPixel(Pixel((IMAGE_WIDTH/2)-25,(IMAGE_HEIGHT/2)+25,rgbaBlue));
 
 
 		//*****************************************************************************
@@ -79,9 +83,9 @@ void MyGlDraw(void) {
 		// drawCircle
 		//*****************************************************************************
 
-		drawCircle(Pixel((IMAGE_WIDTH/2),(IMAGE_HEIGHT/2)-35,rgbaGreen),220);
-		drawCircle(Pixel((IMAGE_WIDTH/2)+25,(IMAGE_HEIGHT/2)+25,rgbaRed),50);
-		drawCircle(Pixel((IMAGE_WIDTH/2)-25,(IMAGE_HEIGHT/2)+25,rgbaBlue),20);
+		// drawCircle(Pixel((IMAGE_WIDTH/2),(IMAGE_HEIGHT/2)-35,rgbaGreen),220);
+		// drawCircle(Pixel((IMAGE_WIDTH/2)+25,(IMAGE_HEIGHT/2)+25,rgbaRed),50);
+		// drawCircle(Pixel((IMAGE_WIDTH/2)-25,(IMAGE_HEIGHT/2)+25,rgbaBlue),20);
 }
 
 //-----------------------------------------------------------------------------
