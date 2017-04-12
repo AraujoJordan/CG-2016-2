@@ -32,14 +32,12 @@ void MyGlDraw(void) {
 
   clearScreen(); //Clear the screen each frame
 
-
-
-  //CAMERA WORKs
+  //CREATE MVP
   glm::mat4 Projection = glm::perspective(glm::radians(45.0f), 1.0f, 2.0f, 100.f); //create the perspective matrix
   glm::mat4 View = glm::translate(glm::mat4(1.0f), glm::vec3(1.7f, 1.7f, -5.0f)); // put the camera on front of the object
   View = glm::scale(View, glm::vec3(1.0f, -1.0f, 1.0f)); //Invert Y of the camera (to adjust the opengl coordinates)
   glm::mat4 Model = glm::mat4(1.0f); // create the Model matrix
-  Model = glm::scale(Model, glm::vec3(1.0f, 1.0f, 1.0f)); //Scale the model to cover the object in the camera
+  Model = glm::scale(Model, glm::vec3(1.0f, 2.0f, 2.0f)); //Scale the model to cover the object in the camera
   CameraMVP = Projection * View * Model;
 
   rot += 1.0+rot/100; // represent the rotation value
