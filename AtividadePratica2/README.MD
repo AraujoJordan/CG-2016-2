@@ -143,4 +143,7 @@ for(int i=0; i<objData->faceCount; i++) {
 ```
 Estes pontos formam um triangulo, que é renderizado na tela usando o método `drawTriangle()`
 
+Aqui está o vídeo do resultado, clique no thumbnail para acessa-lo no Youtube, (Não se esqueça de configurar em 1080p para uma melhor experiência):
+[![Vídeo exemplo](https://i.ytimg.com/vi/AaCXE870PSs/default.jpg?sqp=CIiwwMcF&rs=AOn4CLBdga68lVGcPLM7qCS7lsXDtoKwQQ)](https://www.youtube.com/watch?v=AaCXE870PSs "Vídeo exemplo")
+
 O código completo pode ser averiguado neste [link](https://github.com/AraujoJordan/CG-2016-2/blob/master/AtividadePratica2/codigo/src/main.cpp)
