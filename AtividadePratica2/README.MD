@@ -155,7 +155,7 @@ Estes pontos formam um triangulo, que é renderizado na tela usando o método `d
 
 Aqui está o vídeo do resultado, clique no thumbnail para acessa-lo no Youtube, (Não se esqueça de configurar em 1080p para uma melhor experiência):
 
-[![Vídeo exemplo](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/thumbnail.png](https://www.youtube.com/watch?v=AaCXE870PSs "Vídeo exemplo")
+[![Vídeo exemplo](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/thumbnail.png)](https://www.youtube.com/watch?v=AaCXE870PSs "Vídeo exemplo")
 
 
 O código completo pode ser averiguado neste [link](https://github.com/AraujoJordan/CG-2016-2/blob/master/AtividadePratica2/codigo/src/main.cpp)
