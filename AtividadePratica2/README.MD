@@ -37,8 +37,10 @@ A criação da Matrix View foi feito inicialmente para definir como a camera se 
 * O `lookAt`, com o ponto em que a camera está apontada;
 * O `upDirection` ponto que representa a posição da camera (aponta do centro para cima da camera);
 
-A partir destes 3 valores representados em vetores (`glm::vec3`) se obtem as coordenadas da camera que é definido por xCamera, yCamera e zCamera com o cálculo onde:
+A partir destes 3 valores representados em vetores (`glm::vec3`) se obtem as coordenadas da camera que é definido por xCamera, yCamera e zCamera com o cálculo:
+
 ![camCords](https://www.ntu.edu.sg/home/ehchua/programming/opengl/images/Graphics3D_CameraCoord.png)
+
 Onde, `zCamera = Zc`, `xCamera = Xc` e `yCamera = yC`
 Imagens pertencentes ao website: [www.ntu.edu.sg](https://www.ntu.edu.sg/home/ehchua/programming/opengl/CG_BasicsTheory.html)
 
