@@ -4,8 +4,7 @@ O pipeline gráfico é uma sequência de passos que realizam transformações de
 Nestas transformações, são utilizados matrizes para tirar proveito da paralelização da GPU e coordenadas homogênia para realizar algumas transformções afim, como a translação.
 
 ![Pipeline1](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/3d.png)
-![Pipeline2](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/MVP.png)
-Fonte: Imagem retirada do slide da diciplina
+Fonte: Imagem do resultado
 
 Neste trabalho foi implemntado algumas transformações, estas foram colocadas na ordem que são executadas no código, afim de facilitar o entendimento do funcionamento do código. Outra observação importante é toda a estrutura do pipeline gráfico se executa dentro de uma única função, e tudo dentro da [main.cpp](https://github.com/AraujoJordan/CG-2016-2/blob/master/AtividadePratica2/codigo/src/main.cpp), afim de reduzir as chamadas de função, aumentando o desempenho final. O código Foi feito modularizando em trechos para facilitar a leitura e organização do código.
 
@@ -109,6 +108,9 @@ Neste parte é definida a distância da camera para a nearPlane, criando a matri
 	matProjection[3].z = distanceCamera;
   //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ```
+
+![Pipeline2](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/MVP.png)
+Fonte: Imagem do código
 
 ### É calculada a matriz ModelViewProjection na seguinte linha:
 
