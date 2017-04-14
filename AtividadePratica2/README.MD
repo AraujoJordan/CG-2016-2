@@ -83,19 +83,25 @@ Lembrando que o GLM por baixo, cria as matrizes transformações que se deseja u
   ##### Na translação:
   `glm::translate(glm::mat4(1.0f), glm::vec3(dX,dY,dZ))`
   Ele cria a matriz:
+  
   ![Matriz translação](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/translation.png)
+  
   e a multiplica pela identidade.
 
   ##### Na rotação:
   `glm::rotate(glm::mat4(1.0f),1.0f, glm::vec3(dX,dY,dZ))`
   Ele cria as seguintes matrizes:
+  
   ![Matriz rotação](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/rotation.png)
+  
   e as multiplicam pela identidade.
 
    ##### Na escala:
   `glm::scale(glm::mat4(1.0f),1.0f, glm::vec3(dX,dY,dZ))`
   Ele cria as seguinte matriz:
+  
   ![Matriz escala](https://raw.githubusercontent.com/AraujoJordan/CG-2016-2/master/AtividadePratica2/imagens/scale.png)
+  
   e a multiplica pela identidade.
 
 ### Criando a transformação Projection
