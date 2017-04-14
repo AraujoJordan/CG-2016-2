@@ -126,7 +126,7 @@ Uma rotação e uma escala são armazenados em uma matriz chamada `transformatio
   glm::mat4 transformations = glm::rotate(glm::mat4(1.0f), rot, glm::vec3(1.0f, 1.0f, 1.0f)) * glm::scale(glm::mat4(1.0f),glm::vec3(rot/100,rot/100,rot/100)); // create a transformation matrix to the object
 ```
 
-### Aplicando a matrix no objeto 3D
+### Aplicando a matriz no objeto 3D
 Para cada ponto do objeto 3D, é multiplicada a transformação `transformations`, e a `CameraMVP`
 ```cpp
 for(int i=0; i<objData->faceCount; i++) {
