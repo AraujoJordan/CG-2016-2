@@ -8,8 +8,6 @@ Fonte: Imagem do resultado
 
 Neste trabalho foi implemntado algumas transformações, estas foram colocadas na ordem que são executadas no código, afim de facilitar o entendimento do funcionamento do código. Outra observação importante é toda a estrutura do pipeline gráfico se executa dentro de uma única função, e tudo dentro da [main.cpp](https://github.com/AraujoJordan/CG-2016-2/blob/master/AtividadePratica2/codigo/src/main.cpp), afim de reduzir as chamadas de função, aumentando o desempenho final. O código Foi feito modularizando em trechos para facilitar a leitura e organização do código.
 
-![camCords](https://www.ntu.edu.sg/home/ehchua/programming/opengl/images/Graphics3D_CameraCoord.png)
-
 O código foi feito em C++, e todo o pipeline se encontra na [main.cpp](https://github.com/AraujoJordan/CG-2016-2/blob/master/AtividadePratica2/codigo/src/main.cpp) do projeto. Foi utilizado a biblioteca  [Assimp](http://www.assimp.org/ "Official Assimp website") e [GLM](http://glm.g-truc.net/0.9.8/index.html "Official OpenGL Mathematics website")   para facilitar nas estrutras (leitura de objeto e de manipulação de matrizes/vetores).
 ## Código na `main()`
 ### Leitura do modelo 3D
